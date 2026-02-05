@@ -4,7 +4,7 @@ Well now you might be asking, what the heck is this???
 
 I know I know, let me _Swa459_ clear it.
 
-**Pyseries** a lib which you may trust for:
+**PySeries** a lib which you may trust for:
 
 *- Building a game* like maybe..... A **clicker game**, or maybe a boring **rectangle movement with arrow keys**
 
