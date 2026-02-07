@@ -150,4 +150,4 @@ _- More in-built features such as : Stopwatch & Label_
 
 Now I guess you have seen the `PySound.py` also right? You might have been wondering what is that?
 
-Well as many of you use **Pygame** so of course you should be knowing **Pygame.mixer**, this is also an module of **PySeries**.
+Well as many of you use **Pygame** so of course you should be knowing **Pygame.mixer**, in that way **PySound** is also an module of **PySeries** for sound rendering.
