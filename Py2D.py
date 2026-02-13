@@ -10,80 +10,376 @@ def RGBformatter(r, g, b):
     return f"#{r:02x}{g:02x}{b:02x}"
 
 Colors = {
-    # Reds
+    # --- REDS & PINKS ---
     "red": RGBformatter(255, 0, 0),
     "firebrick": RGBformatter(178, 34, 34),
     "darkred": RGBformatter(139, 0, 0),
-    "carmine": RGBformatter(154, 0, 24),
     "crimson": RGBformatter(220, 20, 60),
     "indianred": RGBformatter(205, 92, 92),
     "lightcoral": RGBformatter(240, 128, 128),
-
-    # Oranges
-    "orangered": RGBformatter(255, 69, 0),
-    "tomato": RGBformatter(255, 99, 71),
-    "orange": RGBformatter(255, 165, 0),
-    "darkorange": RGBformatter(255, 140, 0),
-    "coral": RGBformatter(255, 127, 80),
-    "saffron": RGBformatter(244, 196, 48),
-
-    # Pinks
+    "salmon": RGBformatter(250, 128, 114),
+    "darksalmon": RGBformatter(233, 150, 122),
+    "lightsalmon": RGBformatter(255, 160, 122),
     "pink": RGBformatter(255, 192, 203),
     "lightpink": RGBformatter(255, 182, 193),
     "hotpink": RGBformatter(255, 105, 180),
     "deeppink": RGBformatter(255, 20, 147),
-    "fuchsia": RGBformatter(255, 0, 255),
-    "rosepink": RGBformatter(255, 102, 204),
-    "darkpink": RGBformatter(231, 84, 128),
-
-    # Yellows
-    "yellow": RGBformatter(255, 255, 0),
+    "palevioletred": RGBformatter(219, 112, 147),
+    "mediumvioletred": RGBformatter(199, 21, 133),
+    # Additional reds and pinks
+    "brickred": RGBformatter(203, 65, 84),
+    "carnation": RGBformatter(255, 166, 201),
+    "cherryred": RGBformatter(222, 49, 99),
+    "coralred": RGBformatter(255, 64, 64),
+    "flamingo": RGBformatter(252, 142, 172),
+    "fuchsiapink": RGBformatter(255, 119, 255),
+    "magentarose": RGBformatter(255, 0, 175),
+    "persianrose": RGBformatter(254, 40, 162),
+    "raspberryred": RGBformatter(227, 11, 92),
+    "rose": RGBformatter(255, 0, 127),
+    "rosewood": RGBformatter(101, 0, 11),
+    "ruby": RGBformatter(224, 17, 95),
+    "scarlet": RGBformatter(255, 36, 0),
+    "shockingpink": RGBformatter(252, 15, 192),
+    "strawberry": RGBformatter(252, 90, 141),
+    "watermelon": RGBformatter(254, 127, 156),
+    "wine": RGBformatter(114, 47, 55),
+    
+    # --- ORANGES & YELLOWS ---
+    "orangered": RGBformatter(255, 69, 0),
+    "tomato": RGBformatter(255, 99, 71),
+    "coral": RGBformatter(255, 127, 80),
+    "darkorange": RGBformatter(255, 140, 0),
+    "orange": RGBformatter(255, 165, 0),
     "gold": RGBformatter(255, 215, 0),
+    "yellow": RGBformatter(255, 255, 0),
+    "lightyellow": RGBformatter(255, 255, 224),
+    "lemonchiffon": RGBformatter(255, 250, 205),
+    "papayawhip": RGBformatter(255, 239, 213),
+    "moccasin": RGBformatter(255, 228, 181),
+    "peachpuff": RGBformatter(255, 218, 185),
+    "palegoldenrod": RGBformatter(238, 232, 170),
     "khaki": RGBformatter(240, 230, 140),
     "darkkhaki": RGBformatter(189, 183, 107),
-    "lemonchiffon": RGBformatter(255, 250, 205),
-
-    # Greens
-    "green": RGBformatter(0, 128, 0),
-    "darkgreen": RGBformatter(0, 100, 0),
-    "lime": RGBformatter(200, 255, 0),
-    "forestgreen": RGBformatter(34, 139, 34),
-    "seagreen": RGBformatter(46, 139, 87),
-    "mediumseagreen": RGBformatter(60, 179, 113),
-    "springgreen": RGBformatter(0, 255, 127),
-
-    # Blues
-    "blue": RGBformatter(0, 0, 255),
-    "darkblue": RGBformatter(0, 0, 139),
-    "royalblue": RGBformatter(65, 105, 225),
-    "steelblue": RGBformatter(70, 130, 180),
-    "skyblue": RGBformatter(135, 206, 235),
-    "deepskyblue": RGBformatter(0, 191, 255),
-    "dodgerblue": RGBformatter(30, 144, 255),
-    "cyan": RGBformatter(0, 255, 230),
-    "darkcyan": RGBformatter(0, 200, 180),
-
-    # Purples
-    "purple": RGBformatter(200, 0, 200),
-    "indigo": RGBformatter(75, 0, 130),
+    # Additional oranges and yellows
+    "amber": RGBformatter(255, 191, 0),
+    "apricot": RGBformatter(251, 206, 177),
+    "brass": RGBformatter(181, 166, 66),
+    "bronze": RGBformatter(205, 127, 50),
+    "buff": RGBformatter(240, 220, 130),
+    "butterscotch": RGBformatter(224, 169, 69),
+    "canary": RGBformatter(255, 255, 153),
+    "caramel": RGBformatter(255, 213, 154),
+    "champagne": RGBformatter(247, 231, 206),
+    "citrine": RGBformatter(228, 208, 10),
+    "copper": RGBformatter(184, 115, 51),
+    "cream": RGBformatter(255, 253, 208),
+    "dandelion": RGBformatter(240, 225, 48),
+    "ecru": RGBformatter(194, 178, 128),
+    "fawn": RGBformatter(229, 170, 112),
+    "flax": RGBformatter(238, 220, 130),
+    "gamboge": RGBformatter(228, 155, 15),
+    "honey": RGBformatter(235, 174, 52),
+    "jasmine": RGBformatter(248, 222, 126),
+    "lemon": RGBformatter(255, 247, 0),
+    "maize": RGBformatter(251, 236, 93),
+    "marigold": RGBformatter(234, 162, 33),
+    "mustard": RGBformatter(255, 219, 88),
+    "ocher": RGBformatter(204, 119, 34),
+    "peach": RGBformatter(255, 229, 180),
+    "pumpkin": RGBformatter(255, 117, 24),
+    "saffron": RGBformatter(244, 196, 48),
+    "sand": RGBformatter(194, 178, 128),
+    "straw": RGBformatter(228, 217, 111),
+    "tangerine": RGBformatter(242, 133, 0),
+    
+    # --- PURPLES ---
+    "lavender": RGBformatter(230, 230, 250),
+    "thistle": RGBformatter(216, 191, 216),
+    "plum": RGBformatter(221, 160, 221),
     "violet": RGBformatter(238, 130, 238),
     "orchid": RGBformatter(218, 112, 214),
-    "plum": RGBformatter(221, 160, 221),
+    "fuchsia": RGBformatter(255, 0, 255),
     "magenta": RGBformatter(255, 0, 255),
-
-    # Browns
-    "brown": RGBformatter(165, 42, 42),
-    "saddlebrown": RGBformatter(139, 69, 19),
-    "chocolate": RGBformatter(210, 105, 30),
-    "peru": RGBformatter(205, 133, 63),
+    "mediumorchid": RGBformatter(186, 85, 211),
+    "mediumpurple": RGBformatter(147, 112, 219),
+    "blueviolet": RGBformatter(138, 43, 226),
+    "darkviolet": RGBformatter(148, 0, 211),
+    "darkorchid": RGBformatter(153, 50, 204),
+    "darkmagenta": RGBformatter(139, 0, 139),
+    "purple": RGBformatter(128, 0, 128),
+    "indigo": RGBformatter(75, 0, 130),
+    "slateblue": RGBformatter(106, 90, 205),
+    "darkslateblue": RGBformatter(72, 61, 139),
+    # Additional purples
+    "amethyst": RGBformatter(153, 102, 204),
+    "byzantium": RGBformatter(112, 41, 99),
+    "eggplant": RGBformatter(97, 64, 81),
+    "grape": RGBformatter(111, 45, 168),
+    "heliotrope": RGBformatter(223, 115, 255),
+    "iris": RGBformatter(90, 79, 207),
+    "lilac": RGBformatter(200, 162, 200),
+    "mauve": RGBformatter(224, 176, 255),
+    "mulberry": RGBformatter(197, 75, 140),
+    "palatinate": RGBformatter(103, 26, 76),
+    "pansy": RGBformatter(120, 24, 74),
+    "periwinkle": RGBformatter(204, 204, 255),
+    "puce": RGBformatter(204, 136, 153),
+    "royal": RGBformatter(120, 81, 169),
+    "wisteria": RGBformatter(201, 160, 220),
+    
+    # --- GREENS ---
+    "greenyellow": RGBformatter(173, 255, 47),
+    "chartreuse": RGBformatter(127, 255, 0),
+    "lawngreen": RGBformatter(124, 252, 0),
+    "lime": RGBformatter(0, 255, 0),
+    "limegreen": RGBformatter(50, 205, 50),
+    "palegreen": RGBformatter(152, 251, 152),
+    "lightgreen": RGBformatter(144, 238, 144),
+    "mediumspringgreen": RGBformatter(0, 250, 154),
+    "springgreen": RGBformatter(0, 255, 127),
+    "mediumseagreen": RGBformatter(60, 179, 113),
+    "seagreen": RGBformatter(46, 139, 87),
+    "forestgreen": RGBformatter(34, 139, 34),
+    "green": RGBformatter(0, 128, 0),
+    "darkgreen": RGBformatter(0, 100, 0),
+    "yellowgreen": RGBformatter(154, 205, 50),
+    "olivedrab": RGBformatter(107, 142, 35),
+    "olive": RGBformatter(128, 128, 0),
+    "darkolivegreen": RGBformatter(85, 107, 47),
+    "mediumaquamarine": RGBformatter(102, 205, 170),
+    "darkseagreen": RGBformatter(143, 188, 139),
+    "lightseagreen": RGBformatter(32, 178, 170),
+    "darkcyan": RGBformatter(0, 139, 139),
+    "teal": RGBformatter(0, 128, 128),
+    # Additional greens
+    "apple": RGBformatter(141, 182, 0),
+    "asparagus": RGBformatter(135, 169, 107),
+    "avocado": RGBformatter(181, 195, 107),
+    "celadon": RGBformatter(172, 225, 175),
+    "celery": RGBformatter(184, 212, 120),
+    "emerald": RGBformatter(80, 200, 120),
+    "fern": RGBformatter(113, 188, 120),
+    "jade": RGBformatter(0, 168, 107),
+    "juniper": RGBformatter(106, 150, 130),
+    "kelly": RGBformatter(76, 187, 23),
+    "malachite": RGBformatter(11, 218, 81),
+    "mantis": RGBformatter(116, 195, 101),
+    "mint": RGBformatter(152, 255, 152),
+    "moss": RGBformatter(138, 154, 91),
+    "myrtle": RGBformatter(33, 66, 30),
+    "neon": RGBformatter(57, 255, 20),
+    "parakeet": RGBformatter(3, 192, 74),
+    "pear": RGBformatter(209, 226, 49),
+    "pistachio": RGBformatter(147, 197, 114),
+    "sage": RGBformatter(188, 184, 138),
+    "seafoam": RGBformatter(147, 223, 184),
+    "shamrock": RGBformatter(0, 158, 96),
+    "verdigris": RGBformatter(67, 179, 174),
+    "viridian": RGBformatter(64, 130, 109),
+    
+    # --- BLUES & CYANS ---
+    "aqua": RGBformatter(0, 255, 255),
+    "cyan": RGBformatter(0, 255, 255),
+    "lightcyan": RGBformatter(224, 255, 255),
+    "paleturquoise": RGBformatter(175, 238, 238),
+    "aquamarine": RGBformatter(127, 255, 212),
+    "turquoise": RGBformatter(64, 224, 208),
+    "mediumturquoise": RGBformatter(72, 209, 204),
+    "darkturquoise": RGBformatter(0, 206, 209),
+    "cadetblue": RGBformatter(95, 158, 160),
+    "steelblue": RGBformatter(70, 130, 180),
+    "lightsteelblue": RGBformatter(176, 196, 222),
+    "powderblue": RGBformatter(176, 224, 230),
+    "lightblue": RGBformatter(173, 216, 230),
+    "skyblue": RGBformatter(135, 206, 235),
+    "lightskyblue": RGBformatter(135, 206, 250),
+    "deepskyblue": RGBformatter(0, 191, 255),
+    "dodgerblue": RGBformatter(30, 144, 255),
+    "cornflowerblue": RGBformatter(100, 149, 237),
+    "royalblue": RGBformatter(65, 105, 225),
+    "blue": RGBformatter(0, 0, 255),
+    "mediumblue": RGBformatter(0, 0, 205),
+    "darkblue": RGBformatter(0, 0, 139),
+    "navy": RGBformatter(0, 0, 128),
+    "midnightblue": RGBformatter(25, 25, 112),
+    # Additional blues
+    "airforce": RGBformatter(93, 138, 168),
+    "alice": RGBformatter(240, 248, 255),
+    "azure": RGBformatter(0, 127, 255),
+    "babyblue": RGBformatter(137, 207, 240),
+    "capri": RGBformatter(0, 191, 255),
+    "cerulean": RGBformatter(0, 123, 167),
+    "cobalt": RGBformatter(0, 71, 171),
+    "denim": RGBformatter(21, 96, 189),
+    "egyptianblue": RGBformatter(16, 52, 166),
+    "electricblue": RGBformatter(125, 249, 255),
+    "iceblue": RGBformatter(153, 217, 234),
+    "lapislazuli": RGBformatter(38, 97, 156),
+    "neonblue": RGBformatter(70, 102, 255),
+    "oxfordblue": RGBformatter(0, 33, 71),
+    "peacock": RGBformatter(51, 161, 201),
+    "persianblue": RGBformatter(28, 57, 187),
+    "prussian": RGBformatter(0, 49, 83),
+    "sapphire": RGBformatter(15, 82, 186),
+    "tiffany": RGBformatter(10, 186, 181),
+    "ultramarine": RGBformatter(63, 0, 255),
+    
+    # --- BROWNS & WHITES ---
+    "cornsilk": RGBformatter(255, 248, 220),
+    "blanchedalmond": RGBformatter(255, 235, 205),
+    "bisque": RGBformatter(255, 228, 196),
+    "navajowhite": RGBformatter(255, 222, 173),
+    "wheat": RGBformatter(245, 222, 179),
+    "burlywood": RGBformatter(222, 184, 135),
     "tan": RGBformatter(210, 180, 140),
-
-    # Neutrals
-    "black": RGBformatter(0, 0, 0),
-    "gray": RGBformatter(128, 128, 128),
-    "darkgray": RGBformatter(169, 169, 169),
-    "lightgray": RGBformatter(211, 211, 211),
+    "rosybrown": RGBformatter(188, 143, 143),
+    "sandybrown": RGBformatter(244, 164, 96),
+    "goldenrod": RGBformatter(218, 165, 32),
+    "darkgoldenrod": RGBformatter(184, 134, 11),
+    "peru": RGBformatter(205, 133, 63),
+    "chocolate": RGBformatter(210, 105, 30),
+    "saddlebrown": RGBformatter(139, 69, 19),
+    "sienna": RGBformatter(160, 82, 45),
+    "brown": RGBformatter(165, 42, 42),
+    "maroon": RGBformatter(128, 0, 0),
     "white": RGBformatter(255, 255, 255),
+    "snow": RGBformatter(255, 250, 250),
+    "honeydew": RGBformatter(240, 255, 240),
+    "mintcream": RGBformatter(245, 255, 250),
+    "aliceblue": RGBformatter(240, 248, 255),
+    "ghostwhite": RGBformatter(248, 248, 255),
+    "whitesmoke": RGBformatter(245, 245, 245),
+    "seashell": RGBformatter(255, 245, 238),
+    "beige": RGBformatter(245, 245, 220),
+    "oldlace": RGBformatter(253, 245, 230),
+    "floralwhite": RGBformatter(255, 250, 240),
+    "ivory": RGBformatter(255, 255, 240),
+    "antiquewhite": RGBformatter(250, 235, 215),
+    "linen": RGBformatter(250, 240, 230),
+    "lavenderblush": RGBformatter(255, 240, 245),
+    "mistyrose": RGBformatter(255, 228, 225),
+    # Additional browns and whites
+    "almond": RGBformatter(239, 222, 205),
+    "beaver": RGBformatter(159, 129, 112),
+    "biscuit": RGBformatter(255, 228, 196),
+    "brunette": RGBformatter(77, 40, 0),
+    "camel": RGBformatter(193, 154, 107),
+    "chestnut": RGBformatter(149, 69, 53),
+    "cinnamon": RGBformatter(210, 105, 30),
+    "cocoa": RGBformatter(135, 84, 45),
+    "coffee": RGBformatter(111, 78, 55),
+    "cognac": RGBformatter(159, 56, 0),
+    "desert": RGBformatter(193, 154, 107),
+    "espresso": RGBformatter(97, 62, 35),
+    "hazel": RGBformatter(139, 117, 0),
+    "mahogany": RGBformatter(192, 64, 0),
+    "mocha": RGBformatter(135, 84, 45),
+    "oak": RGBformatter(128, 84, 43),
+    "russet": RGBformatter(128, 70, 27),
+    "sepia": RGBformatter(112, 66, 20),
+    "tawny": RGBformatter(205, 87, 0),
+    "terracotta": RGBformatter(226, 114, 91),
+    "umber": RGBformatter(99, 81, 71),
+    "walnut": RGBformatter(119, 63, 26),
+    
+    # --- GRAYS & BLACKS ---
+    "gainsboro": RGBformatter(220, 220, 220),
+    "lightgray": RGBformatter(211, 211, 211),
+    "silver": RGBformatter(192, 192, 192),
+    "darkgray": RGBformatter(169, 169, 169),
+    "gray": RGBformatter(128, 128, 128),
+    "dimgray": RGBformatter(105, 105, 105),
+    "lightslategray": RGBformatter(119, 136, 153),
+    "slategray": RGBformatter(112, 128, 144),
+    "darkslategray": RGBformatter(47, 79, 79),
+    "black": RGBformatter(0, 0, 0),
+    # Additional grays and blacks
+    "ash": RGBformatter(178, 190, 181),
+    "battleship": RGBformatter(132, 132, 130),
+    "carbon": RGBformatter(50, 50, 50),
+    "charcoal": RGBformatter(54, 69, 79),
+    "dove": RGBformatter(109, 109, 109),
+    "ebony": RGBformatter(85, 93, 80),
+    "graphite": RGBformatter(56, 63, 69),
+    "gunmetal": RGBformatter(42, 52, 57),
+    "iron": RGBformatter(90, 92, 106),
+    "lead": RGBformatter(33, 34, 36),
+    "nickel": RGBformatter(114, 116, 114),
+    "pewter": RGBformatter(150, 168, 161),
+    "platinum": RGBformatter(229, 228, 226),
+    "smoke": RGBformatter(115, 130, 118),
+    "steel": RGBformatter(67, 70, 75),
+    "tin": RGBformatter(127, 127, 127),
+    
+    # --- ADDITIONAL NAMED COLORS ---
+    "burgundy": RGBformatter(128, 0, 32),
+    "cardinal": RGBformatter(196, 30, 58),
+    "carmine": RGBformatter(150, 0, 24),
+    "cerise": RGBformatter(222, 49, 99),
+    "claret": RGBformatter(127, 23, 52),
+    "garnet": RGBformatter(115, 54, 53),
+    "pomegranate": RGBformatter(192, 57, 43),
+    "vermilion": RGBformatter(227, 66, 52),
+    
+    "aqua2": RGBformatter(127, 255, 212),
+    "beryl": RGBformatter(217, 242, 221),
+    "caribbean": RGBformatter(0, 204, 153),
+    "lagoon": RGBformatter(4, 123, 141),
+    "ocean": RGBformatter(0, 119, 190),
+    "seawater": RGBformatter(61, 89, 171),
+    
+    "burgundy2": RGBformatter(144, 0, 32),
+    "clover": RGBformatter(56, 118, 29),
+    "emerald2": RGBformatter(1, 121, 111),
+    "forest2": RGBformatter(11, 102, 35),
+    "hunter": RGBformatter(53, 94, 59),
+    "jungle": RGBformatter(41, 171, 135),
+    "pine": RGBformatter(1, 121, 111),
+    
+    "aubergine": RGBformatter(58, 0, 41),
+    "boysenberry": RGBformatter(135, 50, 96),
+    "lavenderblue": RGBformatter(204, 204, 255),
+    "mauveine": RGBformatter(224, 176, 255),
+    "orchid2": RGBformatter(175, 115, 179),
+    "violetred": RGBformatter(247, 83, 148),
+    
+    "bay": RGBformatter(166, 106, 60),
+    "brandy": RGBformatter(135, 65, 63),
+    "brick": RGBformatter(156, 102, 31),
+    "burnt": RGBformatter(138, 54, 15),
+    "ginger": RGBformatter(176, 101, 0),
+    "leather": RGBformatter(150, 112, 89),
+    "rust": RGBformatter(183, 65, 14),
+    "teak": RGBformatter(177, 148, 105),
+    
+    # --- METALLIC COLORS ---
+    "antiquegold": RGBformatter(133, 109, 46),
+    "chromeyellow": RGBformatter(255, 167, 0),
+    "copperrose": RGBformatter(153, 102, 102),
+    "goldleaf": RGBformatter(212, 175, 55),
+    "metallicgold": RGBformatter(212, 175, 55),
+    "metallicsilver": RGBformatter(170, 169, 173),
+    "oldbronze": RGBformatter(111, 78, 55),
+    "oldgold": RGBformatter(207, 181, 59),
+    "rosegold": RGBformatter(183, 110, 121),
+    
+    # --- NEON COLORS ---
+    "neongreen": RGBformatter(57, 255, 20),
+    "neonpink": RGBformatter(255, 16, 240),
+    "neonorange": RGBformatter(255, 95, 31),
+    "neonyellow": RGBformatter(255, 255, 51),
+    "neonpurple": RGBformatter(188, 19, 254),
+    
+    # --- PASTEL COLORS ---
+    "pastelblue": RGBformatter(174, 198, 207),
+    "pastelgreen": RGBformatter(119, 221, 119),
+    "pastellavender": RGBformatter(222, 165, 164),
+    "pastelorange": RGBformatter(255, 179, 71),
+    "pastelpink": RGBformatter(255, 209, 220),
+    "pastelpurple": RGBformatter(179, 158, 181),
+    "pastelred": RGBformatter(255, 105, 97),
+    "pastelyellow": RGBformatter(253, 253, 150),
 }
 
 def AddColor(name, r, g, b):
@@ -120,7 +416,7 @@ def CurrentDate():
 
 # --- Window Class ---
 class Window:
-    def __init__(self, geometry="1000x600", title="Py2D Version 1.0", master=None):
+    def __init__(self, geometry="1000x600", title="Py2D Version 1.1", master=None):
         self.listKeys = []
         
         if master is None:
@@ -169,7 +465,7 @@ class Window:
             output_height=self.area.winfo_height(),
             output_width=self.area.winfo_width()
         )
-        self.bg_image = ImageTk.PhotoImage(Image.open(png_path))
+        self.bg_image = Imagetk.PhotoImage(Image.open(png_path))
         self.area.create_image(0, 0, image=self.bg_image, anchor="nw")
         
     def Settings(self, characteristic, value):
@@ -475,6 +771,82 @@ class StopWatch:
         self.screen.itemconfig(self.sw_id,
                             fill=self.fc,
                             font=(self.fn, self.fs))
+
+class TextBox:
+    def __init__(self, Window, X=10, Y=10, Height=5, Width=40, 
+                 Bg="white", Fg="black", Font=("Arial", 12), 
+                 BorderWidth=1, Relief="solid", Status="multi-liner"):
+        Window.root.update_idletasks()
+        self.Height = Height
+        self.Width = Width
+        self.X = X
+        self.Y = Y
+        self.Bg = Bg
+        self.Fg = Fg
+        self.Font = Font
+        self.BorderWidth = BorderWidth
+        self.Relief = Relief
+        self.Screen: tk.Canvas = Window.area
+
+        if Status == "multi-liner":
+            self.Entity = tk.Text(
+                self.Screen, 
+                height=self.Height, 
+                width=self.Width, 
+                bg=self.Bg, 
+                fg=self.Fg, 
+                font=self.Font, 
+                bd=self.BorderWidth, 
+                relief=self.Relief
+            )
+        elif Status == "single-liner":
+            self.Entity = tk.Entry(
+                self.Screen, 
+                width=self.Width, 
+                bg=self.Bg, 
+                fg=self.Fg, 
+                font=self.Font, 
+                bd=self.BorderWidth, 
+                relief=self.Relief
+            )
+        else:
+            raise ValueError("Status must be 'multi-liner' or 'single-liner'")
+
+        self.Entity.place(x=self.X, y=self.Y)
+
+    def SetText(self, Text: str):
+        if isinstance(self.Entity, tk.Text):
+            self.Entity.delete("1.0", tk.END)
+            self.Entity.insert(tk.END, Text)
+        elif isinstance(self.Entity, tk.Entry):
+            self.Entity.delete(0, tk.END)
+            self.Entity.insert(0, Text)
+
+    def GetText(self) -> str:
+        if isinstance(self.Entity, tk.Text):
+            return self.Entity.get("1.0", tk.END).strip()
+        elif isinstance(self.Entity, tk.Entry):
+            return self.Entity.get().strip()
+
+    def Clear(self):
+        if isinstance(self.Entity, tk.Text):
+            self.Entity.delete("1.0", tk.END)
+        elif isinstance(self.Entity, tk.Entry):
+            self.Entity.delete(0, tk.END)
+
+    def Configure(self, **kwargs):
+        self.Entity.configure(**kwargs)
+
+    def Move(self, X: int, Y: int):
+        self.X, self.Y = X, Y
+        self.Entity.place(x=self.X, y=self.Y)
+
+    def BindEvent(self, Event: str, Callback):
+        self.Entity.bind(Event, Callback)
+
+    def SetAlignment(self, Align="left"):
+        if isinstance(self.Entity, tk.Entry):
+            self.Entity.configure(justify=Align)
 
 # --- Sprite Class ---
 class Sprite:
@@ -919,7 +1291,7 @@ class Sprite:
                 output_height=sizey if sizey else None
             )
         pil_img = Image.open(cache_path)
-        self.image = ImageTk.PhotoImage(pil_img)
+        self.image = Imagetk.PhotoImage(pil_img)
         self.sprite = self.canvas.create_image(x, y, image=self.image, anchor=anchor)
     
     def IsClicked(self, func):
@@ -958,16 +1330,16 @@ class Sprite:
             y1 = event.y - self.offset_y
             self.canvas.coords(self.sprite, x1, y1, x1+width, y1+height)
 
-            # fire callback if registered
             if self._drag_callback:
                 self._drag_callback(x1, y1, event)
 
     def _on_release(self, event):
         self.dragging = False
 
-__all__ = ["Window", "Sprite", "Score", "StopWatch", "Timer", "Label"]
+__all__ = ["Window", "Sprite", "Score", "StopWatch", "Label", "TextBox"]
 Window = Window
 Sprite = Sprite
 Score = Score
 StopWatch = StopWatch
 Label = Label
+TextBox = TextBox
