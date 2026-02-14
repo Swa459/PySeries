@@ -775,7 +775,7 @@ class StopWatch:
 class TextBox:
     def __init__(self, Window, X=10, Y=10, Height=5, Width=40, 
                  Bg="white", Fg="black", Font=("Arial", 12), 
-                 BorderWidth=1, Relief="solid", Status="multi-liner"):
+                 BorderWidth=0, Relief="solid", Status="multi-liner"):
         Window.root.update_idletasks()
         self.Height = Height
         self.Width = Width
@@ -1148,40 +1148,60 @@ class Sprite:
 
         step()
     
-    def Jump(self, view="front", key="<space>", jumpHeight=20, bounciness="mid"):
+    def Jump(self, view="front", key="<space>", jumpHeight=100, bounciness="mid"):
         def do_jump(event=None):
-            if view == "front":
-                if bounciness == "low":
-                    self.Glide(direction="n", speed=4, steps=jumpHeight)
-                    self.Glide(direction="s", speed=4, steps=jumpHeight)
-                elif bounciness == "mid":
-                    self.Glide(direction="n", speed=4, steps=jumpHeight)
-                    self.Glide(direction="s", speed=4, steps=jumpHeight)
-                    self.Glide(direction="n", speed=4, steps=jumpHeight//2)
-                    self.Glide(direction="s", speed=4, steps=jumpHeight//2)
-                elif bounciness == "high":
-                    self.Glide(direction="n", speed=4, steps=jumpHeight)
-                    self.Glide(direction="s", speed=4, steps=jumpHeight)
-                    self.Glide(direction="n", speed=4, steps=jumpHeight//2)
-                    self.Glide(direction="s", speed=4, steps=jumpHeight//2)
-                    self.Glide(direction="n", speed=4, steps=jumpHeight//4)
-                    self.Glide(direction="s", speed=4, steps=jumpHeight//4)
-            elif view == "top":
-                if bounciness == "low":
-                    self.Resize(scale=1.2)
-                    self.Resize(scale=1.0)
-                elif bounciness == "mid":
-                    self.Resize(scale=1.2)
-                    self.Resize(scale=1.0)
-                    self.Resize(scale=1.1)
-                    self.Resize(scale=1.0)
-                elif bounciness == "high":
-                    self.Resize(scale=1.2)
-                    self.Resize(scale=1.0)
-                    self.Resize(scale=1.1)
-                    self.Resize(scale=1.0)
-                    self.Resize(scale=1.05)
-                    self.Resize(scale=1.0)
+                # Physics parameters
+                initial_velocity = jumpHeight / 10  # Initial upward velocity
+                gravity = 0.5  # Gravity constant
+                bounce_dampening = {"low": 0.3, "mid": 0.5, "high": 0.7}
+                dampen = bounce_dampening.get(bounciness, 0.5)
+                
+                # Get current position
+                coords = self.canvas.coords(self.sprite)
+                if not coords:
+                    return
+                
+                # For shapes (polygons), take the first point as reference
+                start_y = coords[1]
+                
+                # Animation state
+                state = {
+                    "velocity": initial_velocity,
+                    "position_y": 0,  # Relative position from start
+                    "ground_y": 0,
+                    "bounces": 0,
+                    "max_bounces": {"low": 1, "mid": 2, "high": 3}[bounciness]
+                }
+                
+                def animate_bounce():
+                    # Update velocity with gravity
+                    state["velocity"] -= gravity
+                    state["position_y"] -= state["velocity"]
+                    
+                    # Check if hit ground
+                    if state["position_y"] >= state["ground_y"]:
+                        # Snap to ground
+                        dy = state["ground_y"] - state["position_y"]
+                        self.canvas.move(self.sprite, 0, dy)
+                        state["position_y"] = state["ground_y"]
+                        
+                        # Bounce back up
+                        if state["bounces"] < state["max_bounces"] and abs(state["velocity"]) > 1:
+                            state["velocity"] = abs(state["velocity"]) * dampen
+                            state["bounces"] += 1
+                            self.canvas.after(16, animate_bounce)  # ~60 FPS
+                        else:
+                            # Stop bouncing - ensure we're exactly at ground
+                            state["velocity"] = 0
+                    else:
+                        # Move sprite by velocity
+                        self.canvas.move(self.sprite, 0, -state["velocity"])
+                        # Continue animation
+                        self.canvas.after(16, animate_bounce)  # ~60 FPS
+                
+                # Start the animation
+                animate_bounce()
+                        
         self.canvas.bind_all(key, do_jump)
 
     def Fly(self, view="front", key="<space>", speed=4, bounciness="mid", flyHeight=40):
