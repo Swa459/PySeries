@@ -116,4 +116,5 @@ class PySound:
                 "Path": self.Path,
                 "Filename": os.path.basename(self.Path)
             }
+
         return {}
